@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
+import LottieAnimationItem from "./components/LottieAnimationItem.vue";
 import TheHeader from "./components/TheHeader.vue";
+import SampleAnimation from "./assets/sampleLottie.json";
 </script>
 
 <template>
@@ -16,6 +18,7 @@ import TheHeader from "./components/TheHeader.vue";
         </a>
       </div>
       <HelloWorld msg="Vite + Vue" />
+      <LottieAnimationItem :animationData="SampleAnimation" />
     </VMain>
   </VApp>
 </template>
