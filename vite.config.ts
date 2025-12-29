@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import ViteFonts from "unplugin-fonts/vite";
 import vue from "@vitejs/plugin-vue";
+import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   plugins: [
@@ -17,4 +18,10 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      // @ を src ディレクトリに割り当てる
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
 });

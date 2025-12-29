@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LottieAnimationItem from "./LottieAnimationItem.vue";
-import SampleAnimation from "./../assets/sampleLottie.json";
+import LottieAnimationItem from "@/components/LottieAnimationItem.vue";
+import SampleAnimation from "@/assets/sampleLottie.json";
 </script>
 
 <template>
