@@ -83,7 +83,9 @@ watch(loop, (newLoop) => {
         </VBtn>
 
         <div class="d-flex align-center">
-          <span class="text-caption font-weight-medium text-grey-darken-1 mr-2">
+          <span
+            class="text-caption font-weight-medium text-grey-darken-1 mr-2 d-none d-sm-inline"
+          >
             LOOP
           </span>
           <VSwitch

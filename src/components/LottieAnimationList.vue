@@ -6,7 +6,7 @@ import SampleAnimation from "./../assets/sampleLottie.json";
 <template>
   <VContainer>
     <VRow>
-      <VCol cols="6" md="2" v-for="n in 10" :key="n">
+      <VCol cols="6" lg="3" v-for="n in 10" :key="n">
         <LottieAnimationItem
           :title="`${n.toString()} - 番目`"
           :animationData="SampleAnimation"
