@@ -1,26 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useTheme } from "vuetify";
-import { VAppBar, VSwitch } from "vuetify/components";
-
-const theme = useTheme();
-const isDarkTheme = ref(theme.global.current.value.dark);
-const changeTheme = () => {
-  theme.global.name.value = isDarkTheme.value ? "dark" : "light";
-};
+import { VAppBar } from "vuetify/components";
+import ThemeSwitch from "./ThemeSwitch.vue";
 </script>
 
 <template>
   <VAppBar title="Lottie Books">
     <template v-slot:append>
-      <VSwitch
-        v-model="isDarkTheme"
-        @update:model-value="changeTheme"
-        :prepend-icon="isDarkTheme ? 'mdi-weather-night' : 'mdi-weather-sunny'"
-        hide-details
-        inset
-        class="mr-auto"
-      />
+      <ThemeSwitch class="pr-5" />
     </template>
   </VAppBar>
 </template>
