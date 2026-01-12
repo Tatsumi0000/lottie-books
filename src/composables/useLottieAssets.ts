@@ -1,4 +1,4 @@
-import { computed, type Ref } from "vue";
+import { computed } from "vue";
 import { useTheme } from "vuetify";
 
 interface LottieAsset {
