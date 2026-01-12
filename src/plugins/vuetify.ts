@@ -1,4 +1,3 @@
-import "unfonts.css";
 import "@mdi/font/css/materialdesignicons.css";
 // @ts-ignore "vuetify/styles.css"にしないとエラーにならないけど拡張子をつけるとビルドエラーになるので除外
 import "vuetify/styles";
