@@ -1,4 +1,4 @@
-.PHONY: setup run up 
+.PHONY: setup run up exec 
 
 # docker-compose.ymlに必要なイメージをビルド
 # VueとRailsのライブラリをインストール
@@ -16,3 +16,6 @@ run:
 
 up: 
 	docker compose up -d
+
+exec:
+	docker compose exec app /bin/bash
