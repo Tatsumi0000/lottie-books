@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import LottieAnimationItem from "@/components/LottieAnimationItem.vue";
 import { ref, watch } from "vue";
-import { mdiClose, mdiFileCode } from "@mdi/js";
+import { mdiAlertCircle, mdiClose, mdiFileCode } from "@mdi/js";
 
 const isShowError = ref(false);
 const errorMessage = ref("");
@@ -58,22 +58,23 @@ watch(fileDefineModel, async (newFile) => {
 </script>
 
 <template>
-  <v-container class="py-10">
-    <v-sheet max-width="800" class="mx-auto bg-transparent">
-      <v-alert
+  <VContainer class="py-10">
+    <VSheet max-width="800" class="mx-auto bg-transparent">
+      <VAlert
         v-model="isShowError"
         type="error"
         variant="tonal"
         closable
+        :icon="mdiAlertCircle"
         class="mb-6"
         @click:close="onAlertClosed()"
       >
         {{ errorMessage }}
-      </v-alert>
+      </VAlert>
 
-      <v-fade-transition hide-on-leave>
+      <VFadeTransition hide-on-leave>
         <div v-if="!fileInfo" key="upload-area">
-          <v-file-upload
+          <VFileUpload
             v-model="fileDefineModel"
             filterByType=".json"
             label="Lottie JSONファイルをここにドロップ"
@@ -86,12 +87,12 @@ watch(fileDefineModel, async (newFile) => {
         </div>
 
         <div v-else key="preview-area">
-          <v-card variant="flat" border class="pa-6 rounded-xl shadow-sm">
+          <VCard variant="flat" border class="pa-6 rounded-xl shadow-sm">
             <div class="d-flex align-center justify-space-between mb-6">
               <div class="d-flex align-center overflow-hidden">
-                <v-avatar color="primary" variant="tonal" class="mr-3">
-                  <v-icon :icon="mdiFileCode" />
-                </v-avatar>
+                <VAvatar color="primary" variant="tonal" class="mr-3">
+                  <VIcon :icon="mdiFileCode" />
+                </VAvatar>
                 <div class="text-truncate">
                   <p class="text-caption text-medium-emphasis mb-0">
                     Selected File
@@ -101,7 +102,7 @@ watch(fileDefineModel, async (newFile) => {
                   </h3>
                 </div>
               </div>
-              <v-btn
+              <VBtn
                 :icon="mdiClose"
                 variant="tonal"
                 color="grey"
@@ -109,7 +110,7 @@ watch(fileDefineModel, async (newFile) => {
               />
             </div>
 
-            <v-divider class="mb-6" />
+            <VDivider class="mb-6" />
 
             <div
               class="bg-grey-lighten-4 rounded-lg pa-4 d-flex justify-center align-center"
@@ -120,11 +121,11 @@ watch(fileDefineModel, async (newFile) => {
                 class="w-100"
               />
             </div>
-          </v-card>
+          </VCard>
         </div>
-      </v-fade-transition>
-    </v-sheet>
-  </v-container>
+      </VFadeTransition>
+    </VSheet>
+  </VContainer>
 </template>
 
 <style scoped>
