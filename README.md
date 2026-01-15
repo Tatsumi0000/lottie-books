@@ -1,5 +1,5 @@
-[![Deploy to GitHub Pages](https://github.com/Tatsumi0000/lottie-books/actions/workflows/deploy.yml/badge.svg)](https://github.com/Tatsumi0000/lottie-books/actions/workflows/deploy.yml)
-# Lottie Books
+[![Deploy to GitHub Pages](https://github.com/Tatsumi0000/lottie-book/actions/workflows/deploy.yml/badge.svg)](https://github.com/Tatsumi0000/lottie-book/actions/workflows/deploy.yml)
+# Lottie Book
 
 Deno + Vue3で開発をしています。 開発環境はdocker composeを使っています。
 
