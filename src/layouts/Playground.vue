@@ -77,7 +77,6 @@ watch(fileDefineModel, async (newFile) => {
           <VFileUpload
             v-model="fileDefineModel"
             filterByType=".json"
-            label="Lottie JSONファイルをここにドロップ"
             @rejected="rejectedEvent"
             variant="dashed"
             border="md"
