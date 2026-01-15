@@ -4,6 +4,7 @@ import { Vue3Lottie } from "vue3-lottie";
 import { mdiPlay } from "@mdi/js";
 import { useRoute } from "vue-router";
 import { useTheme } from "vuetify";
+import { router } from "@/plugins/router";
 interface BaseProps {
   /** ファイル名 */
   title: string;
@@ -38,6 +39,7 @@ const transitionLink = computed(() => {
 const loop = ref(false);
 /** 自動再生するか */
 const autoPlay = ref(false);
+autoPlay.value = route.path === "/" ? false : true;
 
 /** lottieをマウントしている要素 */
 const lottieContainer = ref<InstanceType<typeof Vue3Lottie> | null>(null);
@@ -70,7 +72,7 @@ watch(loop, (newLoop) => {
     elevation="2"
     rounded="xl"
     :to="isTopPage ? transitionLink : undefined"
-    :style="{ cursor: isTopPage ? 'pointer' : 'default' }"
+    :style='{ cursor: isTopPage ? "pointer" : "default" }'
     :ripple="isTopPage"
   >
     <div
@@ -88,7 +90,7 @@ watch(loop, (newLoop) => {
       {{ props.title }}
     </VCardTitle>
     <VCardActions clmdiPlayass="px-4 pb-4">
-      <div class="d-flex align-center justify-space-between w-100">
+      <div class="d-flex align-center justify-space-between w-100" @click.stop>
         <VBtn
           color="primary"
           variant="elevated"
@@ -99,7 +101,7 @@ watch(loop, (newLoop) => {
           再生
         </VBtn>
 
-        <div class="d-flex align-center">
+        <div class="d-flex align-center" @click.stop>
           <span
             class="text-body-2 font-weight-bold text-grey-darken-2 mr-2 d-none d-sm-inline"
           >
@@ -120,9 +122,7 @@ watch(loop, (newLoop) => {
 
 <style scoped>
 .custom-card {
-  transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
